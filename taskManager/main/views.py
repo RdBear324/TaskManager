@@ -4,8 +4,11 @@ from .models import Task
 
 
 def index(request):
-    task = Task.objects.all()
-    return render(request, 'index.html', {'title': 'Главная страница', 'tasks': task})
+    task = Task.objects.order_by('-create_on')
+    context = {'title': 'Главная страница',
+               'tasks': task
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
