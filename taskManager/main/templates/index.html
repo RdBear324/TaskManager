@@ -4,12 +4,16 @@
 {% endblock%}
 {% block content%}
     <h1>Главная</h1>
-{% for el in tasks%}
-    <div class="alert alert-warning mt-2">
-        <h2>{{el.title}}</h2>
-        <h6>{{el.author}}</h6>
-        <h6>{{el.create_on}}</h6>
-        <p>{{el.task}}</p>
-    </div>
-{% endfor %}
+{% if tasks %}
+    {% for el in tasks%}
+        <div class="alert alert-warning mt-2">
+            <h2>{{el.title}}</h2>
+            <h6>{{el.author}}</h6>
+            <h6>{{el.create_on}}</h6>
+            <p>{{el.task}}</p>
+        </div>
+    {% endfor %}
+{%else%}
+    <p>Нет записей</p>
+{% endif %}
 {% endblock%}
