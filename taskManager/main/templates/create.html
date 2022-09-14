@@ -10,10 +10,10 @@
                 <div class="container">
                     <h1>Создать новую задачу</h1>
                     <form id="contact-form" role="form" method="post">
-                        <input type="text" placeholder="Введите название" class="form-control"><br>
-                        <textarea id="form_message" name="message" class="form-control"
-                                  placeholder="Введите текст задачи." rows="4" required="required"
-                                  data-error="Please, leave us a message."></textarea><br>
+                        {% csrf_token %}
+                        {{ form.title }} <br>
+                        {{ form.author }} <br>
+                        {{ form.task }} <br>
                         <button type="submit" class="btn btn-primary">Добавить</button>
                     </form>
                 </div>

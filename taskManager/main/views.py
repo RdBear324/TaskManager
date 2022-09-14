@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .forms import TaskForm
 from .models import Task
 
 
@@ -16,4 +16,8 @@ def about(request):
 
 
 def create(request):
-    return render(request, 'create.html')
+    form = TaskForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'create.html', context)
