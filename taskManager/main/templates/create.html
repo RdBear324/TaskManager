@@ -1,12 +1,26 @@
 {% extends 'base.html' %}
 {% block title%}
-    Создать новую задачу
+Создать новую задачу
 {% endblock%}
 {% block content%}
-    <h1>Создать новую задачу</h1>
-    <form method="post">
-        <input type="text" placeholder="Введите название" class="form-control"><br>
-        <textarea type="text" placeholder="Введите описание" class="form-control"></textarea><br>
-        <button type="submit" class="btn btn-success">Добавить</button>
-    </form>
+<div class="row">
+    <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+                <div class="container">
+                    <h1>Создать новую задачу</h1>
+                    <form id="contact-form" role="form" method="post">
+                        <input type="text" placeholder="Введите название" class="form-control"><br>
+                        <textarea id="form_message" name="message" class="form-control"
+                                  placeholder="Введите текст задачи." rows="4" required="required"
+                                  data-error="Please, leave us a message."></textarea><br>
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock%}
+
+
